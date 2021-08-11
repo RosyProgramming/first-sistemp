@@ -1,0 +1,1180 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "columnLines": true,
+        "designer|userAlias": "gridfuncionario",
+        "designer|userClassName": "gridFuncionario",
+        "height": 720,
+        "icon": "resources/images/grid.png",
+        "itemId": "gridFuncionario",
+        "scrollable": true,
+        "store": "StoreFuncionario",
+        "title": "Cadastro de Funcionário",
+        "width": 1352
+    },
+    "configAlternates": {
+        "columnLines": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "iconAlign": "string",
+        "itemId": "string",
+        "scrollable": "auto",
+        "store": "store",
+        "title": "string",
+        "width": "auto",
+        "icon": "string"
+    },
+    "name": "MyGridPanel",
+    "designerId": "d972ba4d-de15-4cbe-bc90-24edffa4dd94",
+    "viewControllerInstanceId": "49f49367-96ab-444e-8c9b-b63c67817766",
+    "viewModelInstanceId": "0cfab23c-f48d-4771-a784-d9ba5f29d4a1",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "259a7032-14bb-42d7-a3c3-eb276d25f954",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "",
+                        "iconCls": "x-fa fa-plus",
+                        "layout|flex": null,
+                        "text": "Novo"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton",
+                    "designerId": "1f279874-0ed3-4944-bcc8-b3e228b16ecb",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var win = Ext.create('rsistemp.view.WindowFuncionario');",
+                                    "var grid = this;",
+                                    "",
+                                    "win.on('close', function() {",
+                                    "    //grid.getStore().removeAll();",
+                                    "    grid.getStore().load();",
+                                    "});",
+                                    "win.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "0158dcd5-dce8-4380-b14e-942bcc0f168e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "icon": "resources/images/excel.png",
+                        "layout|flex": null,
+                        "text": "Exportar"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "dock": "string"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "482a5635-2f67-43a6-bda0-e5799bf80c48",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick2",
+                                "implHandler": [
+                                    "",
+                                    "var grid = Ext.ComponentQuery.query('[itemId=gridFuncionario]')[0];",
+                                    "",
+                                    "// debugger;",
+                                    "",
+                                    "    var funcionario_id = this.queryById('funcionario_id');",
+                                    "    var nome = this.queryById('nome');",
+                                    "",
+                                    "    var sobrenome = this.queryById('sobrenome');",
+                                    "",
+                                    "    var dtnascimento = this.queryById('dtnascimento');",
+                                    "    var salario = this.queryById('salario');",
+                                    "    var telefone = this.queryById('telefone');",
+                                    "",
+                                    "    var idade = this.queryById('idade');",
+                                    "    var sexo = this.queryById('sexo');",
+                                    "",
+                                    "    var email = this.queryById('email');",
+                                    "",
+                                    "    var cargo_id = this.queryById('cargo_id');",
+                                    "    var desc_cargo = this.queryById('desc_cargo');",
+                                    "",
+                                    "    var setor_id = this.queryById('setor_id');",
+                                    "    var desc_setor = this.queryById('desc_setor');",
+                                    "",
+                                    "    var subsetor_id = this.queryById('subsetor_id');",
+                                    "    var desc_subsetor = this.queryById('desc_subsetor');",
+                                    "",
+                                    "",
+                                    "",
+                                    "//Window",
+                                    "//   var win = Ext.create('Ext.window.Window', {",
+                                    "//         title : 'Baixando arquivo Excel',",
+                                    "//         width : 400,",
+                                    "//         height: 200,",
+                                    "//         modal: true,",
+                                    "//         layout: 'fit',",
+                                    "//         maximizable: true",
+                                    "//     });",
+                                    "",
+                                    "    var tip  = Ext.create('Ext.tip.ToolTip', {",
+                                    "        target: Ext.getBody(),",
+                                    "        title: '<center><span style=\"color:' + 'red' + '; font-size:' + '18px' + ';font-weight:' + 'bold' + ';\">Baixando arquivo excel</span></center>'",
+                                    "",
+                                    "    });",
+                                    "",
+                                    "",
+                                    "//comunicando com o php",
+                                    "href = '../../app/rsistemp.php?action=funcionario&metodo=export_funcionario'+",
+                                    "        '&funcionario_id='+funcionario_id+",
+                                    "        '&nome='+nome+",
+                                    "        '&sobrenome='+sobrenome+",
+                                    "        '&dtnascimento='+dtnascimento+",
+                                    "        '&salario='+salario+",
+                                    "        '&telefone='+telefone+",
+                                    "        '&idade='+idade+",
+                                    "        '&sexo='+sexo+",
+                                    "        '&email='+email+",
+                                    "        '&cargo_id='+cargo_id+",
+                                    "        '&desc_cargo='+desc_cargo+",
+                                    "        '&setor_id='+setor_id+",
+                                    "        '&desc_setor='+desc_setor+",
+                                    "        '&subsetor_id='+subsetor_id+",
+                                    "        '&desc_subsetor='+desc_subsetor;",
+                                    "",
+                                    "tip.html = '<iframe src=\"'+href+'\" name=\"principal\" width=\"225px\" height=\"10px\" scrolling=\"auto\" frameborder=\"0\"></iframe>';",
+                                    "",
+                                    "//aparece na tela tooltip",
+                                    "    tip.showAt([0,0]);",
+                                    "    tip.alignTo(document, 't-t');",
+                                    "    tip.getEl().ghost('t', {",
+                                    "        easing: 'ease-in-out',",
+                                    "        duration: 5000,",
+                                    "        callback: function() {",
+                                    "            Ext.destroy(tip);",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "//aparece na tela window",
+                                    "// win.show();",
+                                    "",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick2",
+                            "designerId": "7ef82211-61d0-4e71-9550-eef21c9601ff"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "icon": "resources/images/print.png",
+                        "layout|flex": null,
+                        "text": "Imprimir"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "layout|flex": "number",
+                        "text": "string",
+                        "dock": "string"
+                    },
+                    "name": "MyButton12",
+                    "designerId": "a804c1cd-fddd-41ef-9375-b19e2cda9b4d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick3",
+                                "implHandler": [
+                                    "var grid = Ext.ComponentQuery.query('[itemId=gridFuncionario]')[0];",
+                                    "",
+                                    "",
+                                    "// debugger;",
+                                    "",
+                                    "            var funcionario_id = this.queryById('funcionario_id');",
+                                    "            var nome = this.queryById('nome');",
+                                    "",
+                                    "            var sobrenome = this.queryById('sobrenome');",
+                                    "",
+                                    "            var dtnascimento = this.queryById('dtnascimento');",
+                                    "            var salario = this.queryById('salario');",
+                                    "            var telefone = this.queryById('telefone');",
+                                    "",
+                                    "            var idade = this.queryById('idade');",
+                                    "            var sexo = this.queryById('sexo');",
+                                    "",
+                                    "            var email = this.queryById('email');",
+                                    "",
+                                    "            var cargo_id = this.queryById('cargo_id');",
+                                    "            var desc_cargo = this.queryById('desc_cargo');",
+                                    "",
+                                    "            var setor_id = this.queryById('setor_id');",
+                                    "            var desc_setor = this.queryById('desc_setor');",
+                                    "",
+                                    "            var subsetor_id = this.queryById('subsetor_id');",
+                                    "            var desc_subsetor = this.queryById('desc_subsetor');",
+                                    "",
+                                    "",
+                                    "",
+                                    "        //Window",
+                                    "        //   var win = Ext.create('Ext.window.Window', {",
+                                    "        //         title : 'Baixando arquivo Excel',",
+                                    "        //         width : 400,",
+                                    "        //         height: 200,",
+                                    "        //         modal: true,",
+                                    "        //         layout: 'fit',",
+                                    "        //         maximizable: true",
+                                    "        //     });",
+                                    "",
+                                    "//             var win  = Ext.create('Ext.tip.ToolTip', {",
+                                    "//                 target: Ext.getBody(),",
+                                    "//                 title: '<center><span style=\"color:' + 'red' + '; font-size:' + '18px' + ';font-weight:' + 'bold' + ';\">Baixando arquivo excel</span></center>'",
+                                    "",
+                                    "//             });",
+                                    "",
+                                    "",
+                                    "        //comunicando com o php",
+                                    "        href = '../../app/rsistemp.php?action=funcionario&metodo=_gerarRelatorioFuncionario'+",
+                                    "                '&funcionario_id='+funcionario_id+",
+                                    "                '&nome='+nome+",
+                                    "                '&sobrenome='+sobrenome+",
+                                    "                '&dtnascimento='+dtnascimento+",
+                                    "                '&salario='+salario+",
+                                    "                '&telefone='+telefone+",
+                                    "                '&idade='+idade+",
+                                    "                '&sexo='+sexo+",
+                                    "                '&email='+email+",
+                                    "                '&cargo_id='+cargo_id+",
+                                    "                '&desc_cargo='+desc_cargo+",
+                                    "                '&setor_id='+setor_id+",
+                                    "                '&desc_setor='+desc_setor+",
+                                    "                '&subsetor_id='+subsetor_id+",
+                                    "                '&desc_subsetor='+desc_subsetor;",
+                                    "",
+                                    "//         win.html = '<iframe src=\"'+href+'\" name=\"principal\" width=\"225px\" height=\"10px\" scrolling=\"auto\" frameborder=\"0\"></iframe>';",
+                                    "",
+                                    "//         //aparece na tela tooltip",
+                                    "//          win.showAt([0,0]);",
+                                    "//             win.alignTo(document, 't-t');",
+                                    "//             win.getEl().ghost('t', {",
+                                    "//                 easing: 'ease-in-out',",
+                                    "//                 duration: 5000,",
+                                    "//                 callback: function() {",
+                                    "//                     Ext.destroy(win);",
+                                    "//                 }",
+                                    "//             });",
+                                    "",
+                                    "",
+                                    "    var win = window.open(href, '_blank');",
+                                    "    if(win){",
+                                    "        //Browser has allowed it to be opened",
+                                    "        win.focus();",
+                                    "    }else{",
+                                    "        //Broswer has blocked it",
+                                    "        alert('Por favor, permita popups para este site');",
+                                    "    }",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick3",
+                            "designerId": "11245fd4-54cf-4078-8a07-62108ccc61ed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "528df423-5ca1-4e6e-bf00-9908915cf8ce",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "descricao",
+                        "fieldLabel": "Pesquisar",
+                        "itemId": "opcaoPesquisarPor",
+                        "labelWidth": 70,
+                        "layout|flex": null,
+                        "name": "pesquisarpor",
+                        "store": "StoreOpcaoPesquisaFuncionario",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "layout|flex": "number",
+                        "name": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "width": "auto",
+                        "labelWidth": "number",
+                        "layout|margins": "string"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "f074eba9-400e-4feb-89fc-fd11e7c5fa47",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "st",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "pesquisarPor",
+                        "labelAlign": "right",
+                        "labelWidth": 60,
+                        "layout|flex": null,
+                        "name": "pesquisarPor"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "labelWidth": "number",
+                        "layout|flex": "number",
+                        "layout|margins": "string",
+                        "name": "string",
+                        "labelAlign": "string"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "ae477005-b7ea-41b2-ab31-1951c1fe142d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-search",
+                        "layout|flex": null,
+                        "text": "Pesquisar"
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "9c8053c0-fa3b-4223-8768-c70ce68a4ba1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "//Pegando os valores do comboBox",
+                                    "var opcaoPesquisarPor = this.queryById('opcaoPesquisarPor').getValue();",
+                                    "//Pegando os valores do text field",
+                                    "var pesquisarPor = this.queryById('pesquisarPor').getValue();",
+                                    "var Store = this.getStore();",
+                                    "",
+                                    "Store.getProxy().extraParams = {};",
+                                    "",
+                                    "Store.getProxy().extraParams.opcaoPesquisarPor = opcaoPesquisarPor;",
+                                    "Store.getProxy().extraParams.pesquisarPor = pesquisarPor;",
+                                    "//limpa todos os dados da store",
+                                    "Store.removeAll();",
+                                    "//atualiza a store",
+                                    "Store.load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick1",
+                            "designerId": "b5a7a9f7-83f4-4d9b-b22d-249778cab2cd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.view.Table",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyTable",
+            "designerId": "f2ce832a-f1cf-4a5b-93f2-48554102f9e4"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "funcionario_id",
+                "text": "Funcionario_ID"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn1",
+            "designerId": "02e9b4aa-63c0-42ab-8326-1d4a4c1fa0b0"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "nome",
+                "text": "Nome"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "6dcdd53e-1f89-4af0-8ff4-d8bbf2ee0657"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "sobrenome",
+                "text": "Sobrenome"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn11",
+            "designerId": "1838a7ee-ce53-4513-8d9a-7b360271ff24"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "dtnascimento",
+                "format": "d/m/Y",
+                "text": "Data Nascimento"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyDateColumn1",
+            "designerId": "96b3fd35-50e6-47b0-b736-8ac2d15947fb"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "salario",
+                "text": "Salário"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn14",
+            "designerId": "0208910a-4b13-4703-b04b-0b0707df12ee",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "",
+                            "                return Ext.util.Format.number(value,'0,000.00').replace('.','*').replace(/,/g,'.').replace('*',',');"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "26c4879a-9a41-4448-bc9f-d3996066b4d7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "telefone",
+                "format": "00",
+                "text": "Telefone"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn2",
+            "designerId": "b9272449-c416-49b3-a577-6884a035fecf"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "idade",
+                "text": "Idade",
+                "width": ""
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn10",
+            "designerId": "4ff4db17-f5dc-447a-8c03-17b3289d93fa"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "sexo",
+                "itemId": "sexo",
+                "text": "Sexo"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "groupable": "boolean",
+                "itemId": "string",
+                "text": "string"
+            },
+            "name": "MyColumn9",
+            "designerId": "8e41620a-9f1a-41bc-9952-933b23671a7d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "if (value === 'F')",
+                            "{",
+                            "    return '<span style=\"color:' + 'pink' + ';\">Feminino</span>';",
+                            "} else if (value === 'M') {",
+                            "    return '<span style=\"color:' + 'blue' + ';\">Masculino</span>';",
+                            "}else{",
+                            "    return value;",
+                            "}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "5814fdd9-0f15-4619-86de-1ae450c4a8c2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Template",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "email",
+                "text": "Email"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyTemplateColumn",
+            "designerId": "7f798587-22db-4709-b511-7d368b49ce14",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "<a href=\"mailto:{email}\">{email}</a>"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "tpl",
+                    "designerId": "7fbf428b-e723-4a0d-996d-cb6144043707"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "cargo_id",
+                "text": "Cargo_id"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn3",
+            "designerId": "e9800e10-a5db-454b-bb37-49aaed8fefdc"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "desc_cargo",
+                "text": "Desc Cargo"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn4",
+            "designerId": "2c72f6ca-925a-48ed-ab67-1b625c8bb9d9"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "setor_id",
+                "text": "Setor_id"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn5",
+            "designerId": "9a1d5676-7ce5-480d-b821-592b8f994a5f"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "desc_setor",
+                "text": "Desc Setor"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn6",
+            "designerId": "55f8adee-1ff8-4742-a400-bd2a1503bb9d"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "subsetor_id",
+                "text": "Subsetor "
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn7",
+            "designerId": "37700dc1-6b86-419e-86ae-0ef5f5afbb8e"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "desc_subsetor",
+                "text": "Desc Subsetor"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "text": "string"
+            },
+            "name": "MyColumn8",
+            "designerId": "d5b549bf-3003-46b6-be1d-da90759bf24f"
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "actionColumn_FuncionarioAlterar",
+                "itemId": "actionColumn_FuncionarioAlterar",
+                "width": 30
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "itemId": "string",
+                "width": "auto",
+                "align": "string"
+            },
+            "name": "MyActionColumn",
+            "designerId": "f312e725-c266-4e17-ae65-40c71f3158e2",
+            "cn": [
+                {
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "alterar",
+                        "icon": "resources/images/edit.png",
+                        "iconCls": "",
+                        "tooltip": "Editar"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "tooltip": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyActionColumnItem",
+                    "designerId": "eeb0054b-a6e5-4ad2-a0b0-9ce3fa83b59c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "view",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "item",
+                                    "e",
+                                    "record",
+                                    "row"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "// Criação do window",
+                                    "var win = Ext.create('rsistemp.view.WindowFuncionario', {",
+                                    "    title: 'Alterar - Funcionario',",
+                                    "});",
+                                    "",
+                                    "// Referenciando o formulário",
+                                    "var form = win.queryById('formulario');",
+                                    "",
+                                    "// getForm - > fornece acessoa ao formulario",
+                                    "form.getForm().url = '../../app/rsistemp.php?action=funcionario&metodo=alterar_Funcionario';",
+                                    "",
+                                    "",
+                                    "// Carregar o Record no Formulário",
+                                    "form.getForm().findField('cargo_id').getStore().load({",
+                                    "    callback: function( records, p2, p3) {",
+                                    "        form.loadRecord(record);",
+                                    "        // records[0].data.campo",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "form.getForm().findField('setor_id').getStore().load({",
+                                    "    callback: function( records, p2, p3) {",
+                                    "        form.loadRecord(record);",
+                                    "        // records[0].data.campo",
+                                    "    }",
+                                    "});",
+                                    "",
+                                    "form.getForm().findField('subsetor_id').getStore().load({",
+                                    "    callback: function( records, p2, p3) {",
+                                    "        form.loadRecord(record);",
+                                    "        // records[0].data.campo",
+                                    "    }",
+                                    "});",
+                                    "//limpando novamente, para ter opção de trocar",
+                                    "//form.getForm().findField('funcionario_id').getStore().getProxy().extraParams = {};",
+                                    "// on -> é uma abreviação, um alias de Ext.Element.addListener",
+                                    "// definição de eventos em tempo de execução",
+                                    "win.on('close', function() {",
+                                    "    // atualizar a grid",
+                                    "    //view.getStore().removeAll();",
+                                    "    view.getStore().load();",
+                                    "});",
+                                    "",
+                                    "win.show();",
+                                    ""
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "193c0b48-fa52-49de-9a39-cbc4d27a84c8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Action",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "align": "center",
+                "designer|displayName": "actionColumn_FuncionarioExcluir",
+                "itemId": "actionColumn_FuncionarioExcluir",
+                "width": 30
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "width": "auto",
+                "align": "string",
+                "itemId": "string"
+            },
+            "name": "MyActionColumn1",
+            "designerId": "5ea93ae1-a66f-48a8-9796-b1f979a06ba8",
+            "cn": [
+                {
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Excluir",
+                        "icon": "resources/images/delete.png",
+                        "tooltip": "Excluir"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "tooltip": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyActionColumnItem1",
+                    "designerId": "3c35ff04-ad8f-4ca1-b271-9a40299724a6",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "view",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "item",
+                                    "e",
+                                    "record",
+                                    "row"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.Msg.show({",
+                                    "    //titulo",
+                                    "     title:'Excluir Registro?',",
+                                    "    //messagem que ira aparecer quando abri a janela",
+                                    "     msg: 'Tem certeza que deseja excluir o registro?',",
+                                    "    //button yesno",
+                                    "     buttons: Ext.Msg.YESNO,",
+                                    "    //icone",
+                                    "     icon: Ext.Msg.QUESTION,",
+                                    "",
+                                    "    //função do btn yes",
+                                    "    fn : function(btn){",
+                                    "        if ( btn == \"yes\"){",
+                                    "            //alert('Excluiu! - ' + record.get('nome'));",
+                                    "",
+                                    "            //AJAX",
+                                    "            Ext.Ajax.request({",
+                                    "                //url: '../SISTEMA.php?action=cartao&metodo=_excluirCartao&id=' + record.get('id'), // VIA URL",
+                                    "                url: '../../app/rsistemp.php',",
+                                    "                params: { // VIA POST",
+                                    "                    action: 'funcionario',",
+                                    "                    metodo: 'excluir_Funcionario',",
+                                    "                    funcionario_id: record.get('funcionario_id')",
+                                    "                },",
+                                    "",
+                                    "                success: function(response){",
+                                    "                    var resposta = Ext.JSON.decode(response.responseText);",
+                                    "",
+                                    "                    if(resposta.success===true)",
+                                    "                    {",
+                                    "                        rsistemp.getApplication().Msg(resposta.msg);",
+                                    "                    }",
+                                    "                    else if(resposta.success===false)",
+                                    "                    {",
+                                    "                        Ext.Msg.show({",
+                                    "                            title:'Atenção',",
+                                    "                            msg: resposta.msg,",
+                                    "                            buttons: Ext.Msg.OK,",
+                                    "                            icon: Ext.Msg.WARNING",
+                                    "                        });",
+                                    "                    }",
+                                    "",
+                                    "                    //Ext.Msg.alert('Status', resposta.msg);",
+                                    "                    view.getStore().removeAll();",
+                                    "                    view.getStore().load(); //LOAD NO GRID PARA ATUALIZAR O QUE É EXIBIDO!!!",
+                                    "                },",
+                                    "                failure: function(form, action) {",
+                                    "                    //Ext.Msg.alert('Success', action.result.msg);",
+                                    "                    Ext.Msg.show({",
+                                    "                        title:'Atenção',",
+                                    "                        msg: action.result.msg,",
+                                    "                        buttons: Ext.Msg.OK,",
+                                    "                        icon: Ext.Msg.WARNING",
+                                    "                    });",
+                                    "                }",
+                                    "            });",
+                                    "        }",
+                                    "    }",
+                                    "});"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "ffa9e86c-0305-42b3-933f-0fd4020a049a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Paging",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "displayInfo": true,
+                "dock": "bottom",
+                "store": "StoreFuncionario",
+                "width": 360
+            },
+            "configAlternates": {
+                "displayInfo": "boolean",
+                "dock": "string",
+                "store": "store",
+                "width": "auto"
+            },
+            "name": "MyPagingToolbar",
+            "designerId": "120c788a-dabc-47c3-8064-2b69116143bd"
+        }
+    ]
+}

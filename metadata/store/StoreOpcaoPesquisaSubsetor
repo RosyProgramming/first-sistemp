@@ -1,0 +1,66 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreOpcaoPesquisaSubsetor",
+        "model": "ModelOpcaoPesquisaSubsetor",
+        "storeId": "StoreOpcaoPesquisaSubsetor"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "StoreOpcaoPesquisaFuncionario1",
+    "designerId": "63a3b1c1-c0d7-4abf-a928-de7ba8cfc168",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "{",
+                    "    \"dados\": [",
+                    "        {\"id\": 1, \"descricao\":\"id\"},",
+                    "        {\"id\": 2, \"descricao\":\"setor\"},",
+                    "        {\"id\": 3, \"descricao\":\"subsetor\"},",
+                    "        {\"id\": 4, \"descricao\":\"status\"}",
+                    "",
+                    "    ]",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "data": "object"
+            },
+            "name": "MyMemoryProxy",
+            "designerId": "285d5347-31da-44fc-a409-65c8a90ebc2e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "dados"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "cefe6577-21bd-47f8-8b86-a7e07716eed7"
+                }
+            ]
+        }
+    ]
+}

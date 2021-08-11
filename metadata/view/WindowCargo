@@ -1,0 +1,372 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "windowcargo",
+        "designer|userClassName": "WindowCargo",
+        "flex": 1,
+        "height": 160,
+        "icon": "resources/images/grid.png",
+        "layout": "fit",
+        "modal": true,
+        "title": "Cadastro de cargo",
+        "width": 380
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "layout": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto",
+        "flex": "number",
+        "icon": "string"
+    },
+    "name": "MyWindow",
+    "designerId": "5d9eb66e-b37d-4a47-90cd-7fb77e8b1e87",
+    "viewControllerInstanceId": "847136df-b55d-47bb-bd10-369ef2aecfe8",
+    "viewModelInstanceId": "f8a7b9a4-da1f-4989-80b7-f8a6d41462f7",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar5",
+            "designerId": "c402d0d7-f529-4b5f-8fef-fe5d5b5cf6a9",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill1",
+                    "designerId": "8805c14d-7446-4c6a-98da-ff0985acd8a0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/images/save.gif",
+                        "layout|flex": null,
+                        "text": "Salvar"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "9939d62a-46e8-43f4-b267-2f7d24cf69ff",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "var formPrincipal = this.down('form');//this - Janela -",
+                                    "var id   = formPrincipal.getForm().findField('cargo_id').getValue();",
+                                    "var win = this;",
+                                    "var campo01 = formPrincipal.getForm().findField('desc_cargo');",
+                                    "var grid = Ext.ComponentQuery.query('grid[itemId=gridCargo]')[0];",
+                                    "",
+                                    "if( formPrincipal.getForm().isValid() ){",
+                                    "    formPrincipal.getForm().submit({",
+                                    "        success: function(form, action) {",
+                                    "            //Ext.Msg.alert('Success', action.result.msg);",
+                                    "            if (id === '' || id === null) {",
+                                    "                formPrincipal.getForm().reset(true);",
+                                    "                if (win.carregaStore===true)",
+                                    "                {",
+                                    "                    grid. getStore().removeAll();",
+                                    "                    grid.getStore().load();",
+                                    "                }",
+                                    "                campo01.focus(false,true);",
+                                    "                rsistemp.getApplication().Msg('Registro incluído com sucesso');",
+                                    "",
+                                    "            } else {",
+                                    "                win.close();",
+                                    "            }",
+                                    "        },",
+                                    "        failure: function(form, action) {",
+                                    "//          Ext.Msg.alert('Success','Registro incluído com sucesso!');",
+                                    "            //Ext.Msg.alert('Success', action.result.msg);",
+                                    "            Ext.Msg.show({",
+                                    "                title:'Atenção',",
+                                    "                msg: action.result.msg,",
+                                    "                buttons: Ext.Msg.OK,",
+                                    "                icon: Ext.Msg.WARNING",
+                                    "            });",
+                                    "        }",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "8f7dd32e-7bda-437c-89c5-fa700ac70f17"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/images/cross.png",
+                        "layout|flex": null,
+                        "text": "Fechar"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "a22796ea-4b78-4293-acff-71bb403fa713",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick1",
+                                "implHandler": [
+                                    "this.close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick1",
+                            "designerId": "19e1fbeb-b147-4bed-9c81-b4b5021ad49e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "anchor": "100%",
+                "bodyPadding": 10,
+                "bodyStyle": "10",
+                "dock": null,
+                "flex": 1,
+                "height": 180,
+                "itemId": "cargoFormulario",
+                "title": "",
+                "url": "../../app/rsistemp.php?action=cargo&metodo=inserir_cargo"
+            },
+            "configAlternates": {
+                "anchor": "string",
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "height": "auto",
+                "itemId": "string",
+                "layout": "string",
+                "reference": "string",
+                "title": "string",
+                "bodyStyle": "string",
+                "dock": "string",
+                "flex": "number",
+                "url": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "bb113523-f54b-40ae-8a54-b44550d62a3b",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Cargo Id",
+                        "name": "cargo_id"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField1",
+                    "designerId": "26c1aa17-ab53-48e5-87a5-14fed3cb31dd"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Cargo",
+                        "flex": 1,
+                        "labelWidth": 50,
+                        "layout|anchor": "100%",
+                        "minLength": 2,
+                        "msgTarget": "side",
+                        "name": "desc_cargo",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "allowBlank": "boolean",
+                        "anchor": "string",
+                        "flex": "number",
+                        "minLength": "number",
+                        "msgTarget": "string",
+                        "width": "auto",
+                        "layout|anchor": "string"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "45636a5f-efad-4eb5-ae11-99d6880bf66e"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columns": "1",
+                        "designer|displayName": "status_cargo",
+                        "fieldDefaults": [
+                            "{",
+                            "name:'status'",
+                            "}"
+                        ],
+                        "fieldLabel": "Status",
+                        "itemId": "status_cargo",
+                        "layout|anchor": "100%",
+                        "simpleValue": true,
+                        "width": 400
+                    },
+                    "configAlternates": {
+                        "columns": "string",
+                        "fieldDefaults": "object",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "width": "auto",
+                        "layout|anchor": "string",
+                        "designer|displayName": "string",
+                        "simpleValue": "boolean"
+                    },
+                    "name": "MyRadioGroup1",
+                    "designerId": "51149933-7822-48e8-9e9b-e5919c174982",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Ativo",
+                                "checked": true,
+                                "fieldLabel": null,
+                                "inputValue": "A",
+                                "itemId": "ativo",
+                                "name": "status_cargo"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string",
+                                "itemId": "string",
+                                "checked": "boolean",
+                                "name": "string"
+                            },
+                            "name": "MyRadio3",
+                            "designerId": "4216cf67-01b3-48ec-9722-ccd987f5cdaf"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Inativo",
+                                "fieldLabel": null,
+                                "inputValue": "I",
+                                "itemId": "inativo",
+                                "name": "status_cargo"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string",
+                                "itemId": "string",
+                                "name": "string"
+                            },
+                            "name": "MyRadio4",
+                            "designerId": "96ba7bd0-59ac-4f3e-a99b-960a71f339d8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

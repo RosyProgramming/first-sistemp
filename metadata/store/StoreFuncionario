@@ -1,0 +1,60 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "StoreFuncionario",
+        "model": "ModelFuncionario",
+        "pageSize": 100,
+        "storeId": "StoreFuncionario"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "pageSize": "number",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bc53d6d3-da81-4e28-bb66-edaea0c773c3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../../app/rsistemp.php?action=funcionario&metodo=lista_Funcionario"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "bc81ed0e-fc5a-4f2e-b8a0-9be0f74c559d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "dados"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "0c09a4c5-3755-400e-9183-4e718db4dcd8"
+                }
+            ]
+        }
+    ]
+}

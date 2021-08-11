@@ -1,0 +1,104 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "MyController"
+        ],
+        "models": [
+            "ModelFuncionario",
+            "ModelOpcaoPesquisa",
+            "ModelCargo",
+            "ModelSetor",
+            "ModelSubSetor",
+            "ModelOpcaoPesquisaFuncionario",
+            "ModelOpcaoPesquisaSubsetor"
+        ],
+        "name": "rsistemp",
+        "stores": [
+            "StoreFuncionario",
+            "StoreOpcaoPesquisa",
+            "StoreCargo",
+            "StoreSetor",
+            "StoreSubSetor",
+            "StoreOpcaoPesquisaFuncionario",
+            "StoreOpcaoPesquisaSubsetor"
+        ],
+        "views": [
+            "MyViewport",
+            "gridFuncionario",
+            "WindowFuncionario",
+            "gridCargo",
+            "WindowCargo",
+            "gridSetor",
+            "WindowSetor",
+            "gridSubSetor",
+            "WindowSubsetor"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "Loader9",
+            "designerId": "e1fef5ed-d834-42fc-81f5-387f085a046d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "title"
+                ],
+                "fn": "Msg",
+                "implHandler": [
+                    "    var tip = Ext.create('Ext.tip.ToolTip', {",
+                    "        target: Ext.getBody(),",
+                    "        html: title,",
+                    "        bodyStyle: 'font-size:18px;font-weight:bold;color: red;'",
+                    "    });",
+                    "",
+                    "",
+                    "    tip.showAt([0,0]);",
+                    "    tip.alignTo(document, 't-t');",
+                    "    //tip.getEl().slideIn('t').pause(1).ghost(\"t\", {remove:true});",
+                    "    tip.getEl().ghost('t', {",
+                    "        easing: 'easeOut',",
+                    "        duration: 4000,",
+                    "        callback: function() {",
+                    "            Ext.destroy(tip);",
+                    "        }",
+                    "    });"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "Msg",
+            "designerId": "e51581d7-b347-463b-8b56-715d271db86c"
+        }
+    ]
+}

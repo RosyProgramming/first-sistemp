@@ -1,0 +1,184 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "itemId": "myViewport",
+        "layout": "border",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "itemId": "string",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "6b67b1b4-a62b-493e-a768-a90bea545c26",
+    "viewControllerInstanceId": "e5b077ba-9cb7-4db3-b3ae-5e4c87c026dd",
+    "viewModelInstanceId": "5d63df51-9c7e-4283-a80a-92e944793415",
+    "cn": [
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "animCollapse": "",
+                "collapsed": true,
+                "collapsible": true,
+                "icon": "",
+                "layout|collapseMode": "header",
+                "layout|region": "west",
+                "root": [
+                    "    {",
+                    "expanded: false,",
+                    "children:         ",
+                    "[",
+                    "{ text: \"Cadastro\", expanded: false, children:[",
+                    "{text:\"Funcionário\", id:\"gridFuncionario\", leaf: true},            ",
+                    "{text:\"Cargo\", id:\"gridCargo\", leaf: true},",
+                    "{text:\"Setor\", id:\"gridSetor\", leaf: true},",
+                    "{text:\"Subsetor\", id:\"gridSubSetor\", leaf: true}",
+                    "]",
+                    "},",
+                    "//{text:\"Relatório\", id:\"relatorio_funcionario\", leaf: true}",
+                    "]",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "rootVisible": false,
+                "title": "Menu",
+                "width": 150
+            },
+            "configAlternates": {
+                "layout|region": "string",
+                "root": "object",
+                "rootVisible": "boolean",
+                "title": "string",
+                "width": "auto",
+                "icon": "string",
+                "animCollapse": "auto",
+                "collapsed": "boolean",
+                "collapsible": "boolean",
+                "layout|collapseMode": "string"
+            },
+            "name": "MyTreePanel",
+            "designerId": "72879a8f-f6c6-4aeb-bf21-3bfc53fbe3e7",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": null,
+                        "height": "",
+                        "width": ""
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "height": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyTreeView",
+                    "designerId": "127bab99-29ca-41fd-a0c1-122e29d6e321"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreepanelItemClick",
+                        "implHandler": [
+                            "",
+                            "//buscando itemid do component panel",
+                            "var central = Ext.ComponentQuery.query('panel[itemId=panelCentral]')[0];",
+                            "central.removeAll();",
+                            "",
+                            "if (record.data.id == 'gridFuncionario') {",
+                            "    var grid = Ext.create('rsistemp.view.gridFuncionario');",
+                            "    central.add(grid);",
+                            "    grid.getStore().getProxy().extraParams = {};",
+                            "    grid.getStore().load();",
+                            "",
+                            "}",
+                            "",
+                            "if (record.data.id == 'gridCargo'){",
+                            "    var grid = Ext.create('rsistemp.view.gridCargo');",
+                            "    central.add(grid);",
+                            "    grid.getStore().getProxy().extraParams = {};",
+                            "    grid.getStore().load();",
+                            "}",
+                            "",
+                            "if (record.data.id == 'gridSetor'){",
+                            "    var grid = Ext.create('rsistemp.view.gridSetor');",
+                            "    central.add(grid);",
+                            "    grid.getStore().getProxy().extraParams = {};",
+                            "    grid.getStore().load();",
+                            "}",
+                            "",
+                            "if (record.data.id == 'gridSubSetor'){",
+                            "    var grid = Ext.create('rsistemp.view.gridSubSetor');",
+                            "    central.add(grid);",
+                            "    grid.getStore().getProxy().extraParams = {};",
+                            "    grid.getStore().load();",
+                            "}",
+                            ""
+                        ],
+                        "name": "itemclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreepanelItemClick",
+                    "designerId": "3a80f53d-4f09-46d9-bff9-93d575763676"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "panelCentral",
+                "layout": "fit",
+                "layout|region": "center"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "layout": "string",
+                "layout|region": "string"
+            },
+            "name": "MyPanel",
+            "designerId": "a794e338-c1c9-488b-8cda-8d8b9fd8fb31"
+        }
+    ]
+}

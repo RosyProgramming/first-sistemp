@@ -1,0 +1,53 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "windowcargo",
+        "designer|userClassName": "WindowCargoViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "f8a7b9a4-da1f-4989-80b7-f8a6d41462f7",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[{\"cargo_id\":\"consequatur\",\"desc_cargo\":\"et\",\"status_cargo\":\"nobis\"},{\"cargo_id\":\"ut\",\"desc_cargo\":\"neque\",\"status_cargo\":\"expedita\"},{\"cargo_id\":\"quia\",\"desc_cargo\":\"distinctio\",\"status_cargo\":\"officia\"},{\"cargo_id\":\"eos\",\"desc_cargo\":\"exercitationem\",\"status_cargo\":\"maxime\"},{\"cargo_id\":\"eum\",\"desc_cargo\":\"voluptas\",\"status_cargo\":\"quis\"},{\"cargo_id\":\"sapiente\",\"desc_cargo\":\"minima\",\"status_cargo\":\"aspernatur\"},{\"cargo_id\":\"ratione\",\"desc_cargo\":\"ab\",\"status_cargo\":\"impedit\"},{\"cargo_id\":\"quas\",\"desc_cargo\":\"praesentium\",\"status_cargo\":\"doloremque\"},{\"cargo_id\":\"consequatur\",\"desc_cargo\":\"quia\",\"status_cargo\":\"ducimus\"},{\"cargo_id\":\"eius\",\"desc_cargo\":\"qui\",\"status_cargo\":\"quisquam\"},{\"cargo_id\":\"quia\",\"desc_cargo\":\"id\",\"status_cargo\":\"aut\"},{\"cargo_id\":\"et\",\"desc_cargo\":\"omnis\",\"status_cargo\":\"dignissimos\"},{\"cargo_id\":\"est\",\"desc_cargo\":\"sed\",\"status_cargo\":\"voluptatem\"},{\"cargo_id\":\"labore\",\"desc_cargo\":\"ut\",\"status_cargo\":\"debitis\"},{\"cargo_id\":\"harum\",\"desc_cargo\":\"dolorem\",\"status_cargo\":\"tempore\"},{\"cargo_id\":\"aut\",\"desc_cargo\":\"quisquam\",\"status_cargo\":\"dignissimos\"},{\"cargo_id\":\"enim\",\"desc_cargo\":\"maiores\",\"status_cargo\":\"placeat\"},{\"cargo_id\":\"cumque\",\"desc_cargo\":\"mollitia\",\"status_cargo\":\"nostrum\"},{\"cargo_id\":\"culpa\",\"desc_cargo\":\"non\",\"status_cargo\":\"ea\"},{\"cargo_id\":\"quis\",\"desc_cargo\":\"distinctio\",\"status_cargo\":\"possimus\"},{\"cargo_id\":\"temporibus\",\"desc_cargo\":\"voluptatem\",\"status_cargo\":\"quaerat\"},{\"cargo_id\":\"praesentium\",\"desc_cargo\":\"est\",\"status_cargo\":\"eos\"},{\"cargo_id\":\"est\",\"desc_cargo\":\"officiis\",\"status_cargo\":\"est\"},{\"cargo_id\":\"ea\",\"desc_cargo\":\"odit\",\"status_cargo\":\"nihil\"},{\"cargo_id\":\"et\",\"desc_cargo\":\"quas\",\"status_cargo\":\"sed\"},{\"cargo_id\":\"rerum\",\"desc_cargo\":\"doloribus\",\"status_cargo\":\"consequatur\"},{\"cargo_id\":\"ipsam\",\"desc_cargo\":\"quis\",\"status_cargo\":\"autem\"},{\"cargo_id\":\"nemo\",\"desc_cargo\":\"maiores\",\"status_cargo\":\"consequatur\"},{\"cargo_id\":\"quidem\",\"desc_cargo\":\"assumenda\",\"status_cargo\":\"voluptas\"},{\"cargo_id\":\"ipsum\",\"desc_cargo\":\"ipsam\",\"status_cargo\":\"sequi\"}]"
+                ],
+                "model": "ModelCargo",
+                "name": "modelCargos"
+            },
+            "configAlternates": {
+                "data": "array",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "modelCargos",
+            "designerId": "6dbc7d3e-3846-4201-805e-7e2269a0bd4e",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Memory",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMemoryProxy2",
+                    "designerId": "3aa66e95-727c-417f-a236-762bed10015e"
+                }
+            ]
+        }
+    ]
+}

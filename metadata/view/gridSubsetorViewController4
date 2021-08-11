@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gridsubsetor",
+        "designer|userClassName": "gridSubsetorViewController4"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "gridFuncionarioViewController4",
+    "designerId": "ccb03844-f594-4cbc-a3bb-fc99edd3507f"
+}

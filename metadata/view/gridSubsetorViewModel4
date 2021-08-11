@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "gridsubsetor",
+        "designer|userClassName": "gridSubsetorViewModel4"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "gridFuncionarioViewModel4",
+    "designerId": "efee6e2f-8c2c-438c-9dd1-853c0b9306c6"
+}

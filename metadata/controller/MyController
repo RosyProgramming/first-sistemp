@@ -1,0 +1,82 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "d12087d7-318e-4563-b911-321b5df5f414",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.control({",
+                    "    'field': {",
+                    "        specialkey: this.onProccessKey",
+                    "    }",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "04df73b5-add1-4099-9e6c-46a657c45485"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "field, e, eOpts"
+                ],
+                "fn": "onProccesskey",
+                "implHandler": [
+                    "if (e.getKey() === e.ENTER) {",
+                    "",
+                    "    var form = field.up('form'),",
+                    "        fields = form.query('field'); //form.items,",
+                    "        currentFieldIdx = fields.indexOf(field);",
+                    "",
+                    "    if(currentFieldIdx >-1) {",
+                    "        nextField = fields[currentFieldIdx+1];",
+                    "          nextField && nextField.focus();",
+                    "",
+                    "    }",
+                    "",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onProccesskey",
+            "designerId": "d43a5c07-3ed4-4ecb-9c8a-6f50a99bd794"
+        }
+    ]
+}

@@ -1,0 +1,353 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userAlias": "windowsetor",
+        "designer|userClassName": "WindowSetor",
+        "flex": null,
+        "height": 165,
+        "icon": "resources/images/grid.png",
+        "itemId": "Windowsetor",
+        "layout": "fit",
+        "modal": true,
+        "title": "Cadastro de Setor",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "flex": "number",
+        "height": "auto",
+        "itemId": "string",
+        "layout": "string",
+        "modal": "boolean",
+        "title": "string",
+        "width": "auto",
+        "icon": "string",
+        "autoShow": "boolean"
+    },
+    "name": "MyWindow",
+    "designerId": "6268f7d6-8412-4242-bf9d-a73420abbb85",
+    "viewControllerInstanceId": "5b223c57-1c3f-460b-bb5d-0bf7cd547176",
+    "viewModelInstanceId": "50904a8d-5b30-4974-8ce7-351b2ece5412",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar6",
+            "designerId": "12d496bf-d4ca-48bc-ac90-8c72bf3167d5",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MyFill1",
+                    "designerId": "a900f49b-336a-4895-b2ee-f990bfaf9e66"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/images/save.gif",
+                        "layout|flex": null,
+                        "text": "Salvar"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "6632f0a7-3ce2-4f38-9ef4-da7a8c91a747",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick2",
+                                "implHandler": [
+                                    "var formPrincipal = this.down('form');//this - Janela -",
+                                    "var id   = formPrincipal.getForm().findField('setor_id').getValue();",
+                                    "var win = this;",
+                                    "var campo01 = formPrincipal.getForm().findField('desc_setor');",
+                                    "var grid = Ext.ComponentQuery.query('grid[itemId=gridSetor]')[0];",
+                                    "",
+                                    "if( formPrincipal.getForm().isValid() ){",
+                                    "    formPrincipal.getForm().submit({",
+                                    "        success: function(form, action) {",
+                                    "            //Ext.Msg.alert('Success', action.result.msg);",
+                                    "            if (id === '' || id === null) {",
+                                    "                formPrincipal.getForm().reset(true);",
+                                    "                if (win.carregaStore===true)",
+                                    "                {",
+                                    "                    grid. getStore().removeAll();",
+                                    "                    grid.getStore().load();",
+                                    "                }",
+                                    "                campo01.focus(false,true);",
+                                    "                rsistemp.getApplication().Msg('Registro incluído com sucesso');",
+                                    "",
+                                    "            } else {",
+                                    "                win.close();",
+                                    "            }",
+                                    "        },",
+                                    "        failure: function(form, action) {",
+                                    "//          Ext.Msg.alert('Success','Registro incluído com sucesso!');",
+                                    "            //Ext.Msg.alert('Success', action.result.msg);",
+                                    "            Ext.Msg.show({",
+                                    "                title:'Atenção',",
+                                    "                msg: action.result.msg,",
+                                    "                buttons: Ext.Msg.OK,",
+                                    "                icon: Ext.Msg.WARNING",
+                                    "            });",
+                                    "        }",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick2",
+                            "designerId": "db4239c0-74a9-4a0d-88cf-5773af4beac2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "resources/images/cross.png",
+                        "layout|flex": null,
+                        "text": "Fechar"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "68359418-9078-486b-ad5a-c97279014c2e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick11",
+                                "implHandler": [
+                                    "this.close();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick11",
+                            "designerId": "d9afd34c-c1c4-49de-a16c-1a18936be5bd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "itemId": "setorFormulario",
+                "reference": "form",
+                "title": "",
+                "url": "../../app/rsistemp.php?action=setor&metodo=inserir_setor"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|columns": "number",
+                "itemId": "string",
+                "layout": "string",
+                "reference": "string",
+                "title": "string",
+                "url": "string"
+            },
+            "name": "MyForm2",
+            "designerId": "5179004a-0c4a-408f-9195-0ce8c4351892",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Setor Id",
+                        "name": "setor_id"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "7458ceee-0b12-4f58-8a10-d8c35894f4a6"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "anchor": "100%",
+                        "fieldLabel": "Setor",
+                        "name": "desc_setor"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "name": "string",
+                        "width": "auto",
+                        "anchor": "string"
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "71b6b24c-9e8b-42b0-8891-93f71936667e"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columns": "1",
+                        "designer|displayName": "status_setor",
+                        "fieldDefaults": [
+                            "{",
+                            "    name:'status'",
+                            "}"
+                        ],
+                        "fieldLabel": "Status",
+                        "itemId": "status_setor",
+                        "layout|anchor": "100%",
+                        "simpleValue": true,
+                        "width": 400
+                    },
+                    "configAlternates": {
+                        "columns": "string",
+                        "fieldDefaults": "object",
+                        "fieldLabel": "string",
+                        "itemId": "string",
+                        "width": "auto",
+                        "layout|anchor": "string",
+                        "designer|displayName": "string",
+                        "simpleValue": "boolean"
+                    },
+                    "name": "MyRadioGroup2",
+                    "designerId": "7e00cabf-7330-4fae-83ce-f571732693b2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Ativo",
+                                "checked": true,
+                                "inputValue": "A",
+                                "itemId": "ativo",
+                                "name": "status_setor"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string",
+                                "itemId": "string",
+                                "checked": "boolean",
+                                "name": "string"
+                            },
+                            "name": "MyRadio5",
+                            "designerId": "05b83914-5df8-40a1-955e-04408d5f99c9"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Inativo",
+                                "fieldLabel": null,
+                                "inputValue": "I",
+                                "itemId": "inativo",
+                                "name": "status_setor"
+                            },
+                            "configAlternates": {
+                                "boxLabel": "string",
+                                "fieldLabel": "string",
+                                "inputValue": "string",
+                                "itemId": "string",
+                                "name": "string"
+                            },
+                            "name": "MyRadio6",
+                            "designerId": "12988f74-7919-422f-a782-fb9346d417b9"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

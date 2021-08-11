@@ -1,0 +1,66 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreOpcaoPesquisaFuncionario",
+        "model": "ModelOpcaoPesquisaFuncionario",
+        "storeId": "StoreOpcaoPesquisaFuncionario"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "StoreOpcaoPesquisa1",
+    "designerId": "556d9a76-9c68-4c3b-9b8f-e99a6a5f6504",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "{",
+                    "    \"dados\": [",
+                    "        {\"id\": 1, \"descricao\":\"id\"},",
+                    "        {\"id\": 2, \"descricao\":\"nome\"},",
+                    "        {\"id\": 3, \"descricao\":\"cargo\"},",
+                    "        {\"id\": 4, \"descricao\":\"setor\"},",
+                    "        {\"id\": 5, \"descricao\":\"subsetor\"}",
+                    "    ]",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "data": "object"
+            },
+            "name": "MyMemoryProxy",
+            "designerId": "41d99903-ed04-47f0-a114-2123cc7a6efc",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "dados"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "f4eb0e34-1277-4ce5-bbdf-6c97f3c7f7fb"
+                }
+            ]
+        }
+    ]
+}

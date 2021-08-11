@@ -1,0 +1,64 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoreOpcaoPesquisa",
+        "model": "ModelOpcaoPesquisa",
+        "storeId": "StoreOpcaoPesquisa"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "36df82da-4ba6-445c-9236-528f23b5eb60",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "{",
+                    "    \"dados\": [",
+                    "        {\"id\": 1, \"descricao\":\"id\"},",
+                    "        {\"id\": 2, \"descricao\":\"descrição\"},",
+                    "        {\"id\": 3, \"descricao\":\"status\"}",
+                    "    ]",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "data": "object"
+            },
+            "name": "MyMemoryProxy",
+            "designerId": "b78e7d7d-b1c3-4918-9657-e7c796bbd8ab",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "dados"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "823e16b4-81cc-4740-b57b-2347b6f2ecec"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css_ihkoadia",
+        "url": "../../app/components/rsistemp/canais/index/css/default.css"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "url": "uri"
+    },
+    "name": "css",
+    "designerId": "135d7137-e1c0-48ab-8ecb-2aeb72aa1292"
+}
